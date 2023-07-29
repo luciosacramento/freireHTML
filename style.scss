@@ -1,0 +1,155 @@
+// Variáveis
+$cor-primaria: #007bff;
+$cor-fundo-menu: #f9f9f9;
+
+// Estilos gerais
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// Estilos do menu
+.menu {
+  background-color: $cor-primaria;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    flex: 10%;
+  }
+
+  .menu-links {
+    flex: 80%;
+    ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-left: 20px;
+        position: relative;
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+
+        .submenu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: $cor-fundo-menu;
+          padding: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+          li {
+            a {
+              color: $cor-primaria;
+              text-decoration: none;
+            }
+          }
+        }
+
+        &:hover .submenu {
+          display: block;
+        }
+      }
+    }
+  }
+  .social{
+    flex: 10%;
+  }
+  .toggle{
+      flex: 10%;
+      .menu-toggle {
+        display: table;
+        margin-top: 10px;
+        width: 25px;
+        float: right;
+        cursor: pointer;
+            
+        span {
+          background-color: white;
+          height: 2px;
+          width: 25px;
+        }
+      }
+  }
+
+}
+
+// Estilos do menu responsivo
+@media screen and (max-width: 768px) {
+
+    .menu {
+
+        
+        .menu-links {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            
+            ul{
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &.show {
+            display: flex;
+            }
+
+            li {
+            margin: 10px 0;
+            }
+
+            .has-submenu {
+            .submenu {
+                display: none;
+                position: static;
+                background-color: transparent;
+                box-shadow: none;
+
+                li {
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+                }
+            }
+
+            &.show .submenu {
+                display: block;
+            }
+            }
+        }
+        .toggle{
+            
+            .menu-toggle {
+                display: table;
+                margin-top: 10px;
+            }
+    
+            .menu-toggle.active {
+                .menu-links {
+                display: flex;
+                }
+            }
+    
+            .menu-toggle span {
+                background-color: white;
+                height: 2px;
+                width: 25px;
+                display: block;
+                margin: 5px;
+            }
+        }
+    }
+}

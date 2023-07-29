@@ -1,1 +1,117 @@
-r
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+.menu .logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+  flex: 10%;
+}
+.menu .menu-links {
+  flex: 80%;
+}
+.menu .menu-links ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.menu .menu-links ul li {
+  margin-left: 20px;
+  position: relative;
+}
+.menu .menu-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+.menu .menu-links ul li .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.menu .menu-links ul li .submenu li a {
+  color: #007bff;
+  text-decoration: none;
+}
+.menu .menu-links ul li:hover .submenu {
+  display: block;
+}
+.menu .social {
+  flex: 10%;
+}
+.menu .toggle {
+  flex: 10%;
+}
+.menu .toggle .menu-toggle {
+  display: table;
+  margin-top: 10px;
+  width: 25px;
+  float: right;
+  cursor: pointer;
+}
+.menu .toggle .menu-toggle span {
+  background-color: white;
+  height: 2px;
+  width: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu .menu-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu .menu-links ul {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menu .menu-links.show {
+    display: flex;
+  }
+  .menu .menu-links li {
+    margin: 10px 0;
+  }
+  .menu .menu-links .has-submenu .submenu {
+    display: none;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .menu .menu-links .has-submenu .submenu li a {
+    color: white;
+    text-decoration: none;
+  }
+  .menu .menu-links .has-submenu.show .submenu {
+    display: block;
+  }
+  .menu .toggle .menu-toggle {
+    display: table;
+    margin-top: 10px;
+  }
+  .menu .toggle .menu-toggle.active .menu-links {
+    display: flex;
+  }
+  .menu .toggle .menu-toggle span {
+    background-color: white;
+    height: 2px;
+    width: 25px;
+    display: block;
+    margin: 5px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

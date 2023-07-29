@@ -1,1 +1,48 @@
-r
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="menu">
+        <div class="logo">Marca do Site</div>
+        <nav class="menu-links">
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li class="has-submenu">
+              <a href="#">Serviços</a>
+              <ul class="submenu">
+                <li><a href="#">Serviço 1</a></li>
+                <li><a href="#">Serviço 2</a></li>
+                <li><a href="#">Serviço 3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="social">
+
+        </div>
+        <div class="toggle">
+            <div class="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        </div>
+      </header>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuLinks = document.querySelector('.menu-links');
+
+        menuToggle.addEventListener('click', function () {
+            menuLinks.classList.toggle("show");
+            menuToggle.classList.add("active");
+        });
+        });
+</script>
+</html>
