@@ -6,24 +6,29 @@
 </head>
 <body>
     <header class="menu">
-        <div class="logo">Marca do Site</div>
+        <div class="logo"><img src="img/logo-cor.png" alt="Freire Tecnologia"></div>
         <nav class="menu-links">
           <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Soluções</a></li>
+            <li><a href="#">Indústrias</a></li>
             <li class="has-submenu">
-              <a href="#">Serviços</a>
+              <a href="#">Freire Tecnologia</a>
               <ul class="submenu">
                 <li><a href="#">Serviço 1</a></li>
                 <li><a href="#">Serviço 2</a></li>
                 <li><a href="#">Serviço 3</a></li>
               </ul>
             </li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="#">Carreira</a></li>
+            <li><a href="#">Fale Conosco</a></li>
           </ul>
         </nav>
         <div class="social">
-
+          <ul>
+            <li><img src="/img/icon_social_instagram.png" alt=""></li>
+            <li><img src="/img/icon_social_linkedin.png" alt=""></li>
+            <li><img src="/img/icon_celular.png" alt=""> <span>(11) 99992-1996</span> </li>
+          </ul>
         </div>
         <div class="toggle">
             <div class="menu-toggle">
@@ -33,6 +38,22 @@
             </div>
         </div>
       </header>
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="img/teste_slide_img.jpg" alt="Imagem 1">
+          <div class="text">Legenda da Imagem 1</div>
+        </div>
+    
+        <div class="slide fade">
+          <img src="img/teste_slide_img.jpg" alt="Imagem 2">
+          <div class="text">Legenda da Imagem 2</div>
+        </div>
+    
+        <div class="slide fade">
+          <img src="img/teste_slide_img.jpg" alt="Imagem 3">
+          <div class="text">Legenda da Imagem 3</div>
+        </div>
+      </div>
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -43,6 +64,24 @@
             menuLinks.classList.toggle("show");
             menuToggle.classList.add("active");
         });
-        });
+
+  const slides = document.querySelectorAll('.slide');
+  let slideIndex = 0;
+  let $tempo_transicao = 10;
+
+  showSlides();
+
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = 'block';
+    setTimeout(showSlides, $tempo_transicao * 1000);
+  }
+});
 </script>
 </html>

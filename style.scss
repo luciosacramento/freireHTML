@@ -1,8 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Roboto:wght@300;400;500;700&display=swap');
 // Variáveis
-$cor-primaria: #007bff;
-$cor-fundo-menu: #f9f9f9;
+$corBranco: #fff;
+$corCinzaAzulado: #314B66;
+$corLogoAzul: #3274B7;
+$corLogoVerde: #29B552;
+$font-family: 'Roboto','Arial', sans-serif;
+$tempo-transicao: 10s;
+
+// Mixin
+@mixin font-options($size) {
+    font-family: $font-family;
+    font-weight: $size;
+}
 
 // Estilos gerais
+*{
+  @include font-options(400);
+  color: $corCinzaAzulado;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,34 +26,32 @@ body {
 
 // Estilos do menu
 .menu {
-  background-color: $cor-primaria;
-  color: white;
+  background-color: $corBranco;
   display: flex;
   align-items: center;
   padding: 10px;
-  position: relative;
-
   .logo {
     font-size: 24px;
-    font-weight: bold;
     margin-right: 20px;
-    flex: 10%;
+    flex: auto;
+    padding-left: 30px;
   }
 
   .menu-links {
-    flex: 80%;
+    flex: auto;
     ul {
       list-style: none;
       display: flex;
       padding: 0;
       margin: 0;
+      justify-content: center;
 
       li {
         margin-left: 20px;
         position: relative;
 
         a {
-          color: white;
+          color: $corCinzaAzulado;
           text-decoration: none;
         }
 
@@ -46,14 +60,20 @@ body {
           position: absolute;
           top: 100%;
           left: 0;
-          background-color: $cor-fundo-menu;
-          padding: 10px;
+          background-color: $corLogoAzul;
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
+          width: 100%;
+          padding: 0;
+          
           li {
+            margin: 0;
+            padding: 10px;
             a {
-              color: $cor-primaria;
+              color: $corBranco;
               text-decoration: none;
+            }
+            &:hover{
+              background: $corCinzaAzulado;
             }
           }
         }
@@ -65,10 +85,11 @@ body {
     }
   }
   .social{
-    flex: 10%;
+    flex: auto;
+    display: flex;
   }
   .toggle{
-      flex: 10%;
+      width: 35px;
       .menu-toggle {
         display: table;
         margin-top: 10px;
@@ -77,11 +98,32 @@ body {
         cursor: pointer;
             
         span {
-          background-color: white;
+          background-color: $corCinzaAzulado;
           height: 2px;
           width: 25px;
         }
       }
+  }
+
+  .social{
+    ul{
+      display: flex;
+      justify-content: flex-end;
+      flex: auto;
+      list-style: none;
+      li{
+        flex: none;
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        span{
+          margin-left: 5px;
+          display: block;
+        }
+      }
+    }
+
   }
 
 }
@@ -119,7 +161,7 @@ body {
 
                 li {
                 a {
-                    color: white;
+                    color: $corCinzaAzulado;
                     text-decoration: none;
                 }
                 }
@@ -144,7 +186,7 @@ body {
             }
     
             .menu-toggle span {
-                background-color: white;
+                background-color: $corCinzaAzulado;
                 height: 2px;
                 width: 25px;
                 display: block;
@@ -152,4 +194,41 @@ body {
             }
         }
     }
+}
+
+// Estilos do slideshow
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .slide {
+    display: none;
+
+    &.fade {
+      animation: fade $tempo-transicao ease-in-out infinite;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      margin-top: -100px;
+      left: 0;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+}
+
+// Animação do slideshow
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 1; }
 }
