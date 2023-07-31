@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Alata&family=Roboto:wght@300;400;500;700&display=swap");
-* {
+html {
   font-family: "Roboto", "Arial", sans-serif;
   font-weight: 400;
   color: #314B66;
@@ -98,6 +98,123 @@ body {
 }
 .menu .social ul li span {
   margin-left: 5px;
+  display: block;
+}
+
+.cont_four_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.cont_four_column .item {
+  width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .cont_four_column .item {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cont_four_column .item {
+    width: 100%;
+  }
+}
+
+.cont_three_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.cont_three_column .item {
+  width: 33.33%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 480px) {
+  .cont_three_column .item {
+    width: 100%;
+  }
+}
+
+#chams_servicos {
+  background-color: #29B552;
+  color: #fff;
+  padding: 40px 0;
+}
+#chams_servicos .item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+}
+#chams_servicos .item img {
+  width: auto;
+  margin: 0 auto 10px auto;
+}
+#chams_servicos .item h3 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  margin: 0 auto;
+  max-width: 211px;
+}
+#chams_servicos .item h3 p {
+  font-size: 14px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  text-align: justify;
+  display: block;
+}
+
+#cham_quemsomos {
+  background-color: #fff;
+  color: #314B66;
+  padding: 40px 0;
+}
+#cham_quemsomos h2 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+  color: #3274B7;
+  margin: 0 0 10px 0;
+}
+#cham_quemsomos p {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+#cham_quemsomos .item {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+#cham_quemsomos .item img {
+  width: auto;
+  margin: 0 auto 10px auto;
+}
+#cham_quemsomos .item h3 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0 auto;
+  max-width: 211px;
+  text-transform: uppercase;
+  text-align: center;
+}
+#cham_quemsomos .item h3 p {
+  text-transform: none;
+  font-size: 14px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  text-align: justify;
   display: block;
 }
 

@@ -6,6 +6,12 @@ $corLogoAzul: #3274B7;
 $corLogoVerde: #29B552;
 $font-family: 'Roboto','Arial', sans-serif;
 $tempo-transicao: 10s;
+$max-width-conteudo: 1440px;
+$max-width-conteudo-med: 940px;
+$font-size-24: 24px;
+$font-size-14: 14px;
+$font-size-30: 30px;
+$padding-cont-cham:40px 0;
 
 // Mixin
 @mixin font-options($size) {
@@ -14,7 +20,7 @@ $tempo-transicao: 10s;
 }
 
 // Estilos gerais
-*{
+html{
   @include font-options(400);
   color: $corCinzaAzulado;
 }
@@ -126,6 +132,129 @@ body {
 
   }
 
+}
+
+.cont_four_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width-conteudo;
+  margin: 0 auto;
+  .item {
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 768px) {
+      width: 50%; // 2 colunas em telas menores
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 100%; // 1 coluna em telas ainda menores
+    }
+  }
+}
+
+.cont_three_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width-conteudo-med;
+  margin: 0 auto;
+
+  .item {
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+  
+    @media screen and (max-width: 768px) {
+      //width: 50%; // 2 colunas em telas menores
+    }
+  
+    @media screen and (max-width: 480px) {
+      width: 100%; // 1 coluna em telas ainda menores
+    }
+  }
+}
+
+//Cham Servicos
+#chams_servicos{
+  background-color: $corLogoVerde;
+  color: $corBranco;
+  padding: $padding-cont-cham;
+  .item{
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+
+    img{
+      width: auto;
+      margin: 0 auto 10px auto
+    }
+    h3{
+      @include font-options(300);
+      font-size: $font-size-24;
+      margin: 0 auto;
+      max-width: 211px;
+    
+      p{
+        font-size: $font-size-14;
+        @include font-options(300);
+        margin: 0 auto;
+        text-align: justify;
+        display: block;
+      }
+    }
+  }
+}
+
+//Cham quem somos
+#cham_quemsomos{
+  background-color: $corBranco;
+  color: $corCinzaAzulado;
+  padding: $padding-cont-cham;
+
+  h2{
+    @include font-options(300);
+    text-align: center;
+    width: 100%;
+    font-size: $font-size-30;
+    color: $corLogoAzul;
+    margin: 0 0 10px 0;
+  }
+
+  p{
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .item{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+
+    img{
+      width: auto;
+      margin: 0 auto 10px auto
+    }
+    h3{
+      @include font-options(500);
+      font-size: $font-size-24;
+      margin: 0 auto;
+      max-width: 211px;
+      text-transform: uppercase;
+      text-align: center;
+    
+      p{
+        text-transform: none;
+        font-size: $font-size-14;
+        @include font-options(300);
+        margin: 0 auto;
+        text-align: justify;
+        display: block;
+      }
+    }
+  }
 }
 
 // Estilos do menu responsivo
