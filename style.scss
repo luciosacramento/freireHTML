@@ -10,7 +10,9 @@ $max-width-conteudo: 1440px;
 $max-width-conteudo-med: 940px;
 $font-size-24: 24px;
 $font-size-14: 14px;
+$font-size-20: 20px;
 $font-size-30: 30px;
+$font-size-96: 96px;
 $padding-cont-cham:40px 0;
 
 // Mixin
@@ -28,6 +30,13 @@ html{
 body {
   margin: 0;
   padding: 0;
+}
+
+hr{
+  width: 100%;
+  background: #314B66;
+  border: 0;
+  height: 2px;
 }
 
 // Estilos do menu
@@ -134,6 +143,28 @@ body {
 
 }
 
+.cont_five_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width-conteudo;
+  margin: 0 auto;
+  justify-content: center;
+
+  .item {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 768px) {
+      width: 33.33%; // 2 colunas em telas menores
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 25%; // 1 coluna em telas ainda menores
+    }
+  }
+}
+
 .cont_four_column {
   display: flex;
   flex-wrap: wrap;
@@ -172,6 +203,58 @@ body {
     @media screen and (max-width: 480px) {
       width: 100%; // 1 coluna em telas ainda menores
     }
+  }
+}
+
+.cont_two_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width-conteudo-med;
+  margin: 0 auto;
+
+  .item {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  
+    @media screen and (max-width: 480px) {
+      width: 100%; // 1 coluna em telas ainda menores
+    }
+  }
+}
+
+.box-full{
+  width: 100%;
+  padding: $padding-cont-cham;
+  &.verde{
+    background: $corLogoVerde;
+    .title{
+      color: $corBranco;
+    }
+    .subtitle{
+      color: $corBranco;
+    }
+  }
+  &.verde-gradiente{
+    background-image: linear-gradient(to top, $corLogoAzul 0%, $corLogoVerde 20%);
+    .title{
+      color: $corBranco;
+    }
+    .subtitle{
+      color: $corBranco;
+    }
+  }
+  &.azul{
+    background: $corLogoAzul;
+  }
+  .title{
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
+  .subtitle{
+    text-align: center;
+    display: block;
+    margin: 0;
   }
 }
 
@@ -253,6 +336,87 @@ body {
         text-align: justify;
         display: block;
       }
+    }
+  }
+}
+//Cham nossa presenca
+#cham_nossa_presenca{
+  color: $corBranco;
+  padding: 40px 0 10px 0;
+
+  h2{
+    @include font-options(500);
+    text-align: center;
+    width: 100%;
+    font-size: $font-size-30;
+    margin: 0 0 10px 0;
+  }
+
+  p{
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .item{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    h3{
+      @include font-options(500);
+      font-size: $font-size-96;
+      margin: 0 auto;
+      max-width: 211px;
+      text-transform: uppercase;
+      text-align: center;
+
+      span{
+        font-size: 64px;
+        text-transform: lowercase;
+      }
+    
+      p{
+        text-transform: none;
+        font-size: $font-size-14;
+        @include font-options(700);
+        margin: 0 auto;
+        text-align: justify;
+        display: block;
+      }
+    }
+  }
+  hr{
+    background: $corBranco;
+  }
+}
+
+#cham_nossa_principais{
+  color: $corBranco;
+  padding: 10px 0 40px 0;
+  .item{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    h3{
+      @include font-options(500);
+      font-size: $font-size-30;
+      margin: 0 auto;
+      max-width: 100%;
+      text-align: left;
+    
+      p{
+        text-transform: none;
+        font-size: $font-size-20;
+        @include font-options(400);
+        margin: 10px auto;
+        text-align: justify;
+        display: block;
+      }
+    }
+    &:first-child{
+      border-right: 2px solid $corBranco;
     }
   }
 }

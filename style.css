@@ -10,6 +10,13 @@ body {
   padding: 0;
 }
 
+hr {
+  width: 100%;
+  background: #314B66;
+  border: 0;
+  height: 2px;
+}
+
 .menu {
   background-color: #fff;
   display: flex;
@@ -101,6 +108,29 @@ body {
   display: block;
 }
 
+.cont_five_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.cont_five_column .item {
+  width: 20%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .cont_five_column .item {
+    width: 33.33%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cont_five_column .item {
+    width: 25%;
+  }
+}
+
 .cont_four_column {
   display: flex;
   flex-wrap: wrap;
@@ -138,6 +168,58 @@ body {
   .cont_three_column .item {
     width: 100%;
   }
+}
+
+.cont_two_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.cont_two_column .item {
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 480px) {
+  .cont_two_column .item {
+    width: 100%;
+  }
+}
+
+.box-full {
+  width: 100%;
+  padding: 40px 0;
+}
+.box-full.verde {
+  background: #29B552;
+}
+.box-full.verde .title {
+  color: #fff;
+}
+.box-full.verde .subtitle {
+  color: #fff;
+}
+.box-full.verde-gradiente {
+  background-image: linear-gradient(to top, #3274B7 0%, #29B552 20%);
+}
+.box-full.verde-gradiente .title {
+  color: #fff;
+}
+.box-full.verde-gradiente .subtitle {
+  color: #fff;
+}
+.box-full.azul {
+  background: #3274B7;
+}
+.box-full .title {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+.box-full .subtitle {
+  text-align: center;
+  display: block;
+  margin: 0;
 }
 
 #chams_servicos {
@@ -216,6 +298,85 @@ body {
   margin: 0 auto;
   text-align: justify;
   display: block;
+}
+
+#cham_nossa_presenca {
+  color: #fff;
+  padding: 40px 0 10px 0;
+}
+#cham_nossa_presenca h2 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+  margin: 0 0 10px 0;
+}
+#cham_nossa_presenca p {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+#cham_nossa_presenca .item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+}
+#cham_nossa_presenca .item h3 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 96px;
+  margin: 0 auto;
+  max-width: 211px;
+  text-transform: uppercase;
+  text-align: center;
+}
+#cham_nossa_presenca .item h3 span {
+  font-size: 64px;
+  text-transform: lowercase;
+}
+#cham_nossa_presenca .item h3 p {
+  text-transform: none;
+  font-size: 14px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: justify;
+  display: block;
+}
+#cham_nossa_presenca hr {
+  background: #fff;
+}
+
+#cham_nossa_principais {
+  color: #fff;
+  padding: 10px 0 40px 0;
+}
+#cham_nossa_principais .item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+#cham_nossa_principais .item h3 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: left;
+}
+#cham_nossa_principais .item h3 p {
+  text-transform: none;
+  font-size: 20px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 400;
+  margin: 10px auto;
+  text-align: justify;
+  display: block;
+}
+#cham_nossa_principais .item:first-child {
+  border-right: 2px solid #fff;
 }
 
 @media screen and (max-width: 768px) {
