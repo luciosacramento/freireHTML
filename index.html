@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/dist_flickity.css" media="screen">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,6 +39,7 @@
             </div>
         </div>
       </header>
+      <!--SLIDE SHOW--
       <div class="slideshow-container">
         <div class="slide fade">
           <img src="img/teste_slide_img.jpg" alt="Imagem 1">
@@ -53,7 +55,33 @@
           <img src="img/teste_slide_img.jpg" alt="Imagem 3">
           <div class="text">Legenda da Imagem 3</div>
         </div>
+      </div>-->
+      <!--SLIDE SHOW-->
+      <div id="header-carousel" data-flickity='{"autoPlay": true}'>
+        <div class="carousel-cell">
+          <img src="img/teste_slide_img.jpg" alt="Imagem 2">
+          <div class="text">Legenda da Imagem 2</div>
+        </div>
+        <div class="carousel-cell">
+          <img src="img/teste_slide_img.jpg" alt="Imagem 2">
+          <div class="text">Legenda da Imagem 2</div>
+        </div>
+        <div class="carousel-cell">
+          <img src="img/teste_slide_img.jpg" alt="Imagem 2">
+          <div class="text">Legenda da Imagem 2</div>
+        </div>
+        <div class="carousel-cell">
+          <img src="img/teste_slide_img.jpg" alt="Imagem 2">
+          <div class="text">Legenda da Imagem 2</div>
+        </div>
+        <div class="carousel-cell">
+          <img src="img/teste_slide_img.jpg" alt="Imagem 2">
+          <div class="text">Legenda da Imagem 2</div>
+        </div>
       </div>
+
+      <!--FIM SLIDE SHOW-->
+      <!--SERVICOS-->
       <div id="chams_servicos" class="cont_four_column">
         <div class="item">
           <img src="img/icon_fabrica_software.png" alt="">
@@ -88,6 +116,8 @@
         </h3>
         </div>
       </div>
+      <!--FIM SERVICOS-->
+      <!--QUEM SOMOS-->
       <div id="cham_quemsomos" class="cont_three_column">
         <h2>Que Somos</h2>
         <p>A Freire tecnologia tem o objetivo de inovar no segmento de soluções para gestão pública.</p>
@@ -117,7 +147,23 @@
         </h3>
         </div>
       </div>
+      <!--FIM QUEM SOMOS-->
+      <div id="projetos-carousel" data-flickity='{ "groupCells": true,"wrapAround": true }'>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+      </div>
+
 </body>
+<script src="js/flickity.pkgd.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const menuToggle = document.querySelector('.menu-toggle');
@@ -145,6 +191,33 @@
     slides[slideIndex - 1].style.display = 'block';
     setTimeout(showSlides, $tempo_transicao * 1000);
   }
+
+  var elem = document.querySelector('#header-carousel');
+  var flkty = new Flickity( elem, {
+    // options
+    cellAlign: 'left',
+    contain: true
+  });
+
+  // element argument can be a selector string
+  //   for an individual element
+  var flkty = new Flickity( '#header-carousel', {
+    // options
+  });
+
+  var elem = document.querySelector('#projetos-carousel');
+  var flkty = new Flickity( elem, {
+    // options
+    cellAlign: 'left',
+    contain: true
+  });
+
+  // element argument can be a selector string
+  //   for an individual element
+  var flkty = new Flickity( '#projetos-carousel', {
+    // options
+  });
+  
 });
 </script>
 </html>

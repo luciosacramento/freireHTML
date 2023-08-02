@@ -296,5 +296,47 @@ body {
     opacity: 1;
   }
 }
+#projetos-carousel .carousel-cell {
+  width: 28%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+#projetos-carousel .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+#projetos-carousel .is-selected {
+  background: #ED2;
+}
+
+.carousel {
+  background: #EEE;
+}
+
+#header-carousel {
+  /* cell number */
+}
+#header-carousel .carousel-cell {
+  width: 100%;
+  margin-right: 10px;
+  background: #29B552;
+}
+#header-carousel .carousel-cell img {
+  width: 100%;
+}
+#header-carousel .carousel-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
 
 /*# sourceMappingURL=style.css.map */
