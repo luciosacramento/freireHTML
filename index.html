@@ -199,12 +199,12 @@
        </div>
       <!--FIM NOSSA PRESENCA-->
       <!--COMO PODEMOS AJUDAR-->
-      <div class="box-full azul">
+      <div class="box-full paralax-ajuda">
         <h2 class="title">Como Podemos Ajudar</h2>
         <p class="subtitle">Melhores soluções para transformar sua jornada digital</p>
         <div id="cham_ajuda" class="cont_five_column">
           <div class="item">
-            <img src="img/icon_proposito.png" alt="">
+            <img src="img/icon_siafic.png" alt="">
             <h3>Sistema SIAFIC
             <p>
               Organização, prazos e conformidade com a legislação para gestores públicos
@@ -212,7 +212,7 @@
           </h3>
           </div>
           <div class="item">
-            <img src="img/icon_proposito.png" alt="">
+            <img src="img/icon_siafic.png" alt="">
             <h3>Sistema SIAFIC
             <p>
               Organização, prazos e conformidade com a legislação para gestores públicos
@@ -220,7 +220,7 @@
           </h3>
           </div>
           <div class="item">
-            <img src="img/icon_proposito.png" alt="">
+            <img src="img/icon_siafic.png" alt="">
             <h3>Sistema SIAFIC
             <p>
               Organização, prazos e conformidade com a legislação para gestores públicos
@@ -228,7 +228,7 @@
           </h3>
           </div>
           <div class="item">
-            <img src="img/icon_proposito.png" alt="">
+            <img src="img/icon_siafic.png" alt="">
             <h3>Sistema SIAFIC
             <p>
               Organização, prazos e conformidade com a legislação para gestores públicos
@@ -236,7 +236,7 @@
           </h3>
           </div>
           <div class="item">
-            <img src="img/icon_proposito.png" alt="">
+            <img src="img/icon_siafic.png" alt="">
             <h3>Sistema SIAFIC
             <p>
               Organização, prazos e conformidade com a legislação para gestores públicos
@@ -246,62 +246,128 @@
         </div>
       </div>
       <!--FIM COMO PODEMOS AJUDAR-->
+      <!--PROJETOS-->
+      <div id="cham_projetos" class="box-full">
+        <h2 class="title">Projetos</h2>
+        <p class="subtitle">Conheça alguns de nossos projetos.</p>
 
-      <div id="projetos-carousel" data-flickity='{ "groupCells": true,"wrapAround": true }'>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
+        <div id="projetos-carousel" data-flickity='{ "groupCells": true,"wrapAround": true }'>
+          <div class="carousel-cell">
+
+          <a href="#">
+            <div>
+              <img src="img/img_projeto.jpg" alt="">
+              <h3>Sistema SIAFIC
+              <p>
+                Organização, prazos e conformidade com a legislação para gestores públicos
+              </p>
+            </h3>
+            </div>
+          </a>
+          </div>
+          <div class="carousel-cell">
+
+            <a href="#">
+              <div>
+                <img src="img/img_projeto.jpg" alt="">
+                <h3>Sistema SIAFIC
+                <p>
+                  Organização, prazos e conformidade com a legislação para gestores públicos
+                </p>
+              </h3>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-cell">
+            <a href="#">
+              <div>
+                <img src="img/img_projeto.jpg" alt="">
+                <h3>Sistema SIAFIC
+                <p>
+                  Organização, prazos e conformidade com a legislação para gestores públicos
+                </p>
+              </h3>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-cell">
+
+            <a href="#">
+              <div>
+                <img src="img/img_projeto.jpg" alt="">
+                <h3>Sistema SIAFIC
+                <p>
+                  Organização, prazos e conformidade com a legislação para gestores públicos
+                </p>
+              </h3>
+              </div>
+            </a>
+
+          </div>
+          <div class="carousel-cell">
+            <a href="#">
+              <div>
+                <img src="img/img_projeto.jpg" alt="">
+                <h3>Sistema SIAFIC
+                <p>
+                  Organização, prazos e conformidade com a legislação para gestores públicos
+                </p>
+              </h3>
+              </div>
+            </a>
+
+          </div>
+          <div class="carousel-cell">
+            <a href="#">
+              <div>
+                <img src="img/img_projeto.jpg" alt="">
+                <h3>Sistema SIAFIC
+                <p>
+                  Organização, prazos e conformidade com a legislação para gestores públicos
+                </p>
+              </h3>
+              </div>
+            </a>
+
+          </div>
+          <div class="carousel-cell">
+            <a href="#">
+              <div>
+                <img src="img/img_projeto.jpg" alt="">
+                <h3>Sistema SIAFIC
+                <p>
+                  Organização, prazos e conformidade com a legislação para gestores públicos
+                </p>
+              </h3>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
+      <!--FIM PROJETOS-->
+
 
 </body>
 <script src="js/flickity.pkgd.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menuLinks = document.querySelector('.menu-links');
 
-        menuToggle.addEventListener('click', function () {
-            menuLinks.classList.toggle("show");
-            menuToggle.classList.add("active");
-        });
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuLinks = document.querySelector('.menu-links');
 
-  const slides = document.querySelectorAll('.slide');
-  let slideIndex = 0;
-  let $tempo_transicao = 10;
+  menuToggle.addEventListener('click', function () {
+      menuLinks.classList.toggle("show");
+      menuToggle.classList.add("active");
+  });
 
-  showSlides();
-
-  function showSlides() {
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = 'none';
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = 'block';
-    setTimeout(showSlides, $tempo_transicao * 1000);
-  }
 
   var elem = document.querySelector('#header-carousel');
   var flkty = new Flickity( elem, {
-    // options
     cellAlign: 'left',
     contain: true
-  });
-
-  // element argument can be a selector string
-  //   for an individual element
-  var flkty = new Flickity( '#header-carousel', {
-    // options
   });
 
   var elem = document.querySelector('#projetos-carousel');
@@ -311,11 +377,6 @@
     contain: true
   });
 
-  // element argument can be a selector string
-  //   for an individual element
-  var flkty = new Flickity( '#projetos-carousel', {
-    // options
-  });
   
 });
 </script>

@@ -113,21 +113,22 @@ hr {
   flex-wrap: wrap;
   max-width: 1440px;
   margin: 0 auto;
-  justify-content: center;
 }
 .cont_five_column .item {
-  width: 20%;
-  padding: 10px;
+  width: 18%;
+  margin: 1%;
   box-sizing: border-box;
 }
 @media screen and (max-width: 768px) {
   .cont_five_column .item {
-    width: 33.33%;
+    width: 31.33%;
+    margin: 1%;
   }
 }
 @media screen and (max-width: 480px) {
   .cont_five_column .item {
-    width: 25%;
+    width: 23%;
+    margin: 1%;
   }
 }
 
@@ -156,7 +157,7 @@ hr {
 .cont_three_column {
   display: flex;
   flex-wrap: wrap;
-  max-width: 940px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 .cont_three_column .item {
@@ -173,7 +174,7 @@ hr {
 .cont_two_column {
   display: flex;
   flex-wrap: wrap;
-  max-width: 940px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 .cont_two_column .item {
@@ -215,11 +216,13 @@ hr {
 .box-full .title {
   text-align: center;
   margin: 0 0 10px 0;
+  color: #fff;
 }
 .box-full .subtitle {
   text-align: center;
   display: block;
   margin: 0;
+  color: #fff;
 }
 
 #chams_servicos {
@@ -271,6 +274,9 @@ hr {
   display: block;
   width: 100%;
   margin: 0;
+}
+#cham_quemsomos .subtitle {
+  color: #314B66;
 }
 #cham_quemsomos .item {
   display: flex;
@@ -379,6 +385,71 @@ hr {
   border-right: 2px solid #fff;
 }
 
+#cham_ajuda {
+  color: #fff;
+  color: #fff;
+  padding: 40px 0;
+}
+#cham_ajuda .item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  background: #3274B7;
+  border-radius: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+#cham_ajuda .item img {
+  width: auto;
+  margin: 0 auto 10px auto;
+}
+#cham_ajuda .item h3 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  margin: 0 auto;
+  max-width: 211px;
+}
+#cham_ajuda .item h3 p {
+  font-size: 14px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  text-align: justify;
+  display: block;
+}
+
+.paralax-ajuda {
+  background-image: url("img/bg_ajuda.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#cham_projetos {
+  background-color: #fff;
+  color: #314B66;
+  padding: 40px 0;
+}
+#cham_projetos h2 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+  color: #3274B7;
+  margin: 0 0 10px 0;
+}
+#cham_projetos p {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+#cham_projetos .subtitle {
+  color: #314B66;
+}
+
 @media screen and (max-width: 768px) {
   .menu .menu-links {
     display: none;
@@ -457,28 +528,55 @@ hr {
     opacity: 1;
   }
 }
+#projetos-carousel {
+  padding: 40px 0;
+}
 #projetos-carousel .carousel-cell {
   width: 28%;
-  height: 200px;
   margin-right: 10px;
-  background: #8C8;
   border-radius: 5px;
   counter-increment: carousel-cell;
+  height: 340px;
 }
-#projetos-carousel .carousel-cell:before {
+#projetos-carousel .carousel-cell a {
   display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
+  width: 228px;
+  height: 333px;
+  margin: 0 12%;
+  overflow: hidden;
 }
-#projetos-carousel .is-selected {
-  background: #ED2;
+#projetos-carousel .carousel-cell a div {
+  position: absolute;
+  top: 20px;
+  transition: transform 0.3s ease;
 }
-
-.carousel {
-  background: #EEE;
+#projetos-carousel .carousel-cell a div img {
+  margin: 0 auto;
+  border-radius: 10px;
+}
+#projetos-carousel .carousel-cell a div h3 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0 auto;
+  max-width: 211px;
+  text-transform: uppercase;
+}
+#projetos-carousel .carousel-cell a div h3 p {
+  text-transform: none;
+  font-size: 14px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  text-align: justify;
+  display: block;
+}
+#projetos-carousel .carousel-cell a:hover div {
+  transform: translateY(-20px);
+}
+#projetos-carousel .flickity-page-dots {
+  top: 20px;
+  bottom: auto;
 }
 
 #header-carousel {

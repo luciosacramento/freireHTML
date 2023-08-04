@@ -14,11 +14,54 @@ $font-size-20: 20px;
 $font-size-30: 30px;
 $font-size-96: 96px;
 $padding-cont-cham:40px 0;
+$border-radius: 10px;
+$box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 
 // Mixin
 @mixin font-options($size) {
     font-family: $font-family;
     font-weight: $size;
+}
+
+@mixin basic-column() {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width-conteudo;
+  margin: 0 auto;
+}
+
+@mixin paralax($img){
+    background-image: url($img);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin default-cham-white(){
+  background-color: $corBranco;
+  color: $corCinzaAzulado;
+  padding: $padding-cont-cham;
+
+  h2{
+    @include font-options(300);
+    text-align: center;
+    width: 100%;
+    font-size: $font-size-30;
+    color: $corLogoAzul;
+    margin: 0 0 10px 0;
+  }
+
+  p{
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .subtitle{
+    color: $corCinzaAzulado;
+  }
 }
 
 // Estilos gerais
@@ -144,32 +187,29 @@ hr{
 }
 
 .cont_five_column {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: $max-width-conteudo;
-  margin: 0 auto;
-  justify-content: center;
+  
+  @include basic-column();
 
   .item {
-    width: 20%;
-    padding: 10px;
+    width: 18%;
+    margin: 1%;
     box-sizing: border-box;
 
     @media screen and (max-width: 768px) {
-      width: 33.33%; // 2 colunas em telas menores
+      width: 31.33%; // 2 colunas em telas menores
+      margin: 1%;
     }
 
     @media screen and (max-width: 480px) {
-      width: 25%; // 1 coluna em telas ainda menores
+      width: 23%; // 1 coluna em telas ainda menores
+      margin: 1%;
     }
   }
 }
 
 .cont_four_column {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: $max-width-conteudo;
-  margin: 0 auto;
+  @include basic-column();
+
   .item {
     width: 25%;
     padding: 10px;
@@ -186,10 +226,7 @@ hr{
 }
 
 .cont_three_column {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: $max-width-conteudo-med;
-  margin: 0 auto;
+  @include basic-column();
 
   .item {
     width: 33.33%;
@@ -207,10 +244,7 @@ hr{
 }
 
 .cont_two_column {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: $max-width-conteudo-med;
-  margin: 0 auto;
+  @include basic-column();
 
   .item {
     width: 50%;
@@ -250,11 +284,13 @@ hr{
   .title{
     text-align: center;
     margin: 0 0 10px 0;
+    color: $corBranco;
   }
   .subtitle{
     text-align: center;
     display: block;
     margin: 0;
+    color: $corBranco;
   }
 }
 
@@ -291,25 +327,8 @@ hr{
 
 //Cham quem somos
 #cham_quemsomos{
-  background-color: $corBranco;
-  color: $corCinzaAzulado;
-  padding: $padding-cont-cham;
 
-  h2{
-    @include font-options(300);
-    text-align: center;
-    width: 100%;
-    font-size: $font-size-30;
-    color: $corLogoAzul;
-    margin: 0 0 10px 0;
-  }
-
-  p{
-    text-align: center;
-    display: block;
-    width: 100%;
-    margin: 0;
-  }
+  @include default-cham-white();
 
   .item{
     display: flex;
@@ -421,6 +440,46 @@ hr{
   }
 }
 
+#cham_ajuda{
+  color: $corBranco;
+  color: $corBranco;
+  padding: $padding-cont-cham;
+  .item{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    background: $corLogoAzul;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    img{
+      width: auto;
+      margin: 0 auto 10px auto
+    }
+    h3{
+      @include font-options(300);
+      font-size: $font-size-24;
+      margin: 0 auto;
+      max-width: 211px;
+    
+      p{
+        font-size: $font-size-14;
+        @include font-options(300);
+        margin: 0 auto;
+        text-align: justify;
+        display: block;
+      }
+    }
+  }
+}
+
+.paralax-ajuda{
+  @include paralax("img/bg_ajuda.jpg");
+}
+
+#cham_projetos{
+  @include default-cham-white();
+}
+
 
 // Estilos do menu responsivo MENU
 @media screen and (max-width: 768px) {
@@ -529,30 +588,61 @@ hr{
 
 
 #projetos-carousel{
+  padding: $padding-cont-cham;
   .carousel-cell {
     width: 28%;
-    height: 200px;
     margin-right: 10px;
-    background: #8C8;
     border-radius: 5px;
     counter-increment: carousel-cell;
-    &:before {
+    height: 340px;
+    a{
       display: block;
-      text-align: center;
-      content: counter(carousel-cell);
-      line-height: 200px;
-      font-size: 80px;
-      color: white;
+      width: 228px;
+      height: 333px;
+      margin: 0 12%;
+      overflow: hidden;
+      div{
+          position: absolute;
+          top: 20px;
+          transition: transform 0.3s ease;
+        
+        img{
+          margin: 0 auto;
+          border-radius: $border-radius;
+        }
+
+        h3{
+          @include font-options(500);
+          font-size: $font-size-24;
+          margin: 0 auto;
+          max-width: 211px;
+          text-transform: uppercase;
+        
+          p{
+            text-transform: none;
+            font-size: $font-size-14;
+            @include font-options(300);
+            margin: 0 auto;
+            text-align: justify;
+            display: block;
+          }
+        }
+
+        
+      }
+
+      &:hover div {
+        transform: translateY(-20px);
+      }
+
     }
   }
-  .is-selected {
-    background: #ED2;
+
+  .flickity-page-dots{
+    top: 20px;
+    bottom: auto;
   }
 
-}
-
-.carousel {
-  background: #EEE;
 }
 
 #header-carousel{
@@ -575,3 +665,4 @@ hr{
   }
 }
 
+//optimize this code
