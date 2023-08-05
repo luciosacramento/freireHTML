@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/dist_flickity.css" media="screen">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="menu">
+        <div class="logo"><img src="img/logo-cor.png" alt="Freire Tecnologia"></div>
+        <nav class="menu-links">
+          <ul>
+            <li><a href="#">Soluções</a></li>
+            <li><a href="#">Indústrias</a></li>
+            <li class="has-submenu">
+              <a href="#">Freire Tecnologia</a>
+              <ul class="submenu">
+                <li><a href="#">Serviço 1</a></li>
+                <li><a href="#">Serviço 2</a></li>
+                <li><a href="#">Serviço 3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Carreira</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+          </ul>
+        </nav>
+        <div class="social">
+          <ul>
+            <li><img src="/img/icon_social_instagram.png" alt=""></li>
+            <li><img src="/img/icon_social_linkedin.png" alt=""></li>
+            <li><img src="/img/icon_celular.png" alt=""> <span>(11) 99992-1996</span> </li>
+          </ul>
+        </div>
+        <div class="toggle">
+            <div class="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        </div>
+      </header>
+
+      <!--TITULO-->
+            <div class="titulo-interna">
+                <div>
+                    <h1>
+                        <div>ERP para Gestão Pública</div>
+                    </h1>
+                </div>
+            </div>
+      <!--FIM TITULO-->
+      
+      <!--CONTEUDO FOTO E TEXTO-->
+      <div class="box-full">
+        <div class="texto-foto">
+            <div class="img_destaque" >
+                <img src="img/img_conteudo.png" alt="">
+            </div>
+            <div class="texto">
+                <h4>Simplifique e otimize seus processos de gestão pública</h4>
+                No mundo dos negócios governamentais, a transparência e a eficiência são essenciais para garantir o melhor uso dos recursos públicos. O sistema de ERP da Freire Tecnologia é projetado para fornecer soluções sob medida para a administração pública, permitindo um maior controle e visibilidade sobre seus processos e operações.
+                Nossa <a href="#">equipe de especialistas</a> em tecnologia e gestão pública trabalha em estreita colaboração com nossos clientes para garantir que os sistemas sejam adaptados às suas necessidades, levando em consideração os requisitos legais e regulatórios do setor. Com nossas soluções, você terá acesso a dados e informações precisas em tempo real, facilitando a tomada de decisões.
+            </div>
+        </div>
+      </div>
+      <!--FIM CONTEUDO FOTO E TEXTO-->
+
+      <!--FOOTER-->
+      <footer class="box-full verde-gradiente-50">
+        <div class="cont_three_column">
+          <div class="item">
+            <h3><img src="img/logo-branca.png" alt=""></h3>
+            <p>
+              A Freire Tecnologia chega ao mercado com o objetivo de inovar no segmento de soluções para gestão pública.
+            </p>
+          </div>
+          <div class="item">
+            <h3>Entre em Contato</h3>
+            <p>
+              (11) 99992-1996
+              <span>contato@freiretecnologia.com.br</span>
+            </p>
+          </div>
+          <hr>
+          <div class="item">
+            <p>
+              © 2023 Todos os direitos reservados
+            </p>
+          </div>
+          <div class="item">
+           
+          </div>
+          <div class="item">
+            <p>
+              Site criado por <a href="#">Grupo Reúne</a>
+            </p>
+          </div>
+        </div> 
+      </footer>
+      <!--FIM FOOTER-->
+
+
+</body>
+<script src="js/flickity.pkgd.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuLinks = document.querySelector('.menu-links');
+
+  menuToggle.addEventListener('click', function () {
+      menuLinks.classList.toggle("show");
+      menuToggle.classList.add("active");
+  });
+  
+});
+</script>
+</html>
