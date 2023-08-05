@@ -212,8 +212,8 @@ hr {
 }
 
 .box-full {
-  width: 100%;
-  padding: 40px 0;
+  width: 96%;
+  padding: 40px 2%;
 }
 .box-full.verde {
   background: #29B552;
@@ -488,7 +488,6 @@ hr {
   margin: 0 0 10px 0;
 }
 .titulo-interna h1 div {
-  width: 1440px;
   margin: 0 auto;
   padding-left: 20px;
 }
@@ -517,6 +516,69 @@ hr {
 }
 .texto-foto div {
   flex: 1;
+}
+@media screen and (max-width: 768px) {
+  .texto-foto {
+    flex-direction: column;
+  }
+  .texto-foto .img_destaque {
+    margin: 0 auto;
+  }
+}
+
+.tab-list-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+.tab-list-horizontal > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 300px;
+}
+.tab-list-horizontal > ul li {
+  padding: 10px 5%;
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  background: #29B552;
+  width: 90%;
+  text-transform: uppercase;
+}
+.tab-list-horizontal > ul li.active {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 700;
+  border-bottom: 2px solid #29B552;
+}
+.tab-list-horizontal > ul :last-child {
+  margin-bottom: 0;
+}
+.tab-list-horizontal > ul :first-child {
+  background: #3274B7;
+}
+.tab-list-horizontal > div {
+  background: #3274B7;
+  color: #fff;
+  flex: 0 0 auto;
+}
+.tab-list-horizontal > div div {
+  padding: 20px;
+  display: none;
+}
+.tab-list-horizontal > div :first-child {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .tab-list-horizontal {
+    flex-direction: column;
+  }
 }
 
 /*fim interna*/
