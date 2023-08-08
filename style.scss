@@ -4,6 +4,7 @@ $corBranco: #fff;
 $corCinzaAzulado: #314B66;
 $corLogoAzul: #3274B7;
 $corLogoVerde: #29B552;
+$corCinzaClaro: #F5F5F5;
 $font-family: 'Roboto','Arial', sans-serif;
 $tempo-transicao: 10s;
 $max-width-conteudo: 1440px;
@@ -73,7 +74,11 @@ h4{
   font-size: $font-size-24;
   @include font-options(300);
   margin: 10px 0;
-  color: $corLogoAzul
+  color: $corLogoAzul;
+  line-height: 25px;
+}
+h5{
+  margin: 10px 0
 }
 a{
   @include font-options(700);
@@ -95,9 +100,18 @@ body {
 
 hr{
   width: 100%;
-  background: #314B66;
+  background: $corCinzaClaro;
   border: 0;
   height: 2px;
+}
+
+.mb{
+  margin-bottom: 20px !important;
+}
+
+.border-left{
+  border-left: 2px solid $corCinzaClaro;
+  padding-left: 10px;
 }
 
 // Estilos do menu
@@ -273,6 +287,10 @@ hr{
       width: 100%; // 1 coluna em telas ainda menores
     }
   }
+}
+
+.cont_one_column {
+  @include basic-column();
 }
 
 .box-full{
@@ -559,6 +577,8 @@ hr{
 .tab-list-horizontal{
   display: flex;
   flex-direction: row;
+  max-width: $max-width-conteudo;
+  margin: 0 auto;
  
   >ul{
     display: flex;
@@ -568,7 +588,7 @@ hr{
     padding: 0;
     margin: 0;
     list-style: none;
-    width: 300px;
+    flex: 0 0 25%;
     li{
       padding: 10px 5%;
       cursor: pointer;
@@ -579,34 +599,56 @@ hr{
       background: $corLogoVerde;
       width: 90%;
       text-transform: uppercase;
-      &.active{
+      &.active,&:hover{
         @include font-options(700);
-        border-bottom: 2px solid $corLogoVerde;
+        background: $corLogoAzul;
       }
     }
     :last-child{
       margin-bottom: 0;
     }
-
-    :first-child{
-      background: $corLogoAzul;
+    ::after {
+      @include font-options(300);
+      font-size: $font-size-30;
+      content: ">";
+      position: absolute;
+      float: right;
+      transform: rotate(0deg);
+      position: relative;  
+      transition: margin-right 0.3s ease-in-out;
     }
+    :hover::after {
+      margin-right: -10px;
+ 
+    }
+
   }
   >div{
     background: $corLogoAzul;
     color: $corBranco;
-    flex: 0 0 auto;
+    flex: 1;
     div{
       padding:20px;
       display: none;
     }
-    :first-child{
+ 
+    .active{
       display: block;
     }
   }
 
   @media screen and (max-width: 768px) {
-    flex-direction: column
+    flex-direction: column;
+    >ul{
+      flex: 1;
+      li::after {
+        transform: rotate(90deg);
+        transition: margin-top 0.3s ease-in-out;
+      }
+      li:hover::after {
+        margin-top: -5px;
+      }
+    }
   }
 
 }

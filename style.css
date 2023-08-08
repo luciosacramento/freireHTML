@@ -10,6 +10,11 @@ h4 {
   font-weight: 300;
   margin: 10px 0;
   color: #3274B7;
+  line-height: 25px;
+}
+
+h5 {
+  margin: 10px 0;
 }
 
 a {
@@ -35,9 +40,18 @@ body {
 
 hr {
   width: 100%;
-  background: #314B66;
+  background: #F5F5F5;
   border: 0;
   height: 2px;
+}
+
+.mb {
+  margin-bottom: 20px !important;
+}
+
+.border-left {
+  border-left: 2px solid #F5F5F5;
+  padding-left: 10px;
 }
 
 .menu {
@@ -209,6 +223,13 @@ hr {
   .cont_two_column .item {
     width: 100%;
   }
+}
+
+.cont_one_column {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .box-full {
@@ -529,6 +550,8 @@ hr {
 .tab-list-horizontal {
   display: flex;
   flex-direction: row;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .tab-list-horizontal > ul {
   display: flex;
@@ -538,7 +561,7 @@ hr {
   padding: 0;
   margin: 0;
   list-style: none;
-  width: 300px;
+  flex: 0 0 25%;
 }
 .tab-list-horizontal > ul li {
   padding: 10px 5%;
@@ -552,32 +575,53 @@ hr {
   width: 90%;
   text-transform: uppercase;
 }
-.tab-list-horizontal > ul li.active {
+.tab-list-horizontal > ul li.active, .tab-list-horizontal > ul li:hover {
   font-family: "Roboto", "Arial", sans-serif;
   font-weight: 700;
-  border-bottom: 2px solid #29B552;
+  background: #3274B7;
 }
 .tab-list-horizontal > ul :last-child {
   margin-bottom: 0;
 }
-.tab-list-horizontal > ul :first-child {
-  background: #3274B7;
+.tab-list-horizontal > ul ::after {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  content: ">";
+  position: absolute;
+  float: right;
+  transform: rotate(0deg);
+  position: relative;
+  transition: margin-right 0.3s ease-in-out;
+}
+.tab-list-horizontal > ul :hover::after {
+  margin-right: -10px;
 }
 .tab-list-horizontal > div {
   background: #3274B7;
   color: #fff;
-  flex: 0 0 auto;
+  flex: 1;
 }
 .tab-list-horizontal > div div {
   padding: 20px;
   display: none;
 }
-.tab-list-horizontal > div :first-child {
+.tab-list-horizontal > div .active {
   display: block;
 }
 @media screen and (max-width: 768px) {
   .tab-list-horizontal {
     flex-direction: column;
+  }
+  .tab-list-horizontal > ul {
+    flex: 1;
+  }
+  .tab-list-horizontal > ul li::after {
+    transform: rotate(90deg);
+    transition: margin-top 0.3s ease-in-out;
+  }
+  .tab-list-horizontal > ul li:hover::after {
+    margin-top: -5px;
   }
 }
 
